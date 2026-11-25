@@ -1,0 +1,43 @@
+{
+  "id": "godot-glb",
+  "position_tolerance_m": 0.001,
+  "time_tolerance_seconds": 0.0001,
+  "fixture": {
+    "schema_version": 1,
+    "mesh": {
+      "name": "FixtureMesh",
+      "has_skin": true,
+      "aabb_min_m": [-0.25, 0.0, -1.0],
+      "aabb_max_m": [0.75, 2.0, 0.5]
+    },
+    "bones": [
+      { "name": "Root", "parent": null },
+      { "name": "Hinge", "parent": "Root" }
+    ],
+    "socket_bone": "Hinge",
+    "clip": {
+      "name": "probe_pose",
+      "duration_seconds": 1.0,
+      "samples": [
+        {
+          "time_seconds": 0.0,
+          "root_m": [0.0, 0.0, 0.0],
+          "hinge_m": [0.0, 1.0, 0.0],
+          "socket_m": [0.35, 1.45, -0.4]
+        },
+        {
+          "time_seconds": 0.5,
+          "root_m": [0.0, 0.0, 0.0],
+          "hinge_m": [0.3, 1.0, 0.0],
+          "socket_m": [0.65, 1.45, -0.4]
+        },
+        {
+          "time_seconds": 1.0,
+          "root_m": [0.0, 0.0, 0.0],
+          "hinge_m": [0.6, 1.0, 0.0],
+          "socket_m": [0.95, 1.45, -0.4]
+        }
+      ]
+    }
+  }
+}

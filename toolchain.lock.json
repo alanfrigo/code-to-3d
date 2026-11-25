@@ -1,0 +1,15 @@
+{
+  "platform": "linux-x86_64",
+  "blender": {
+    "version": "Blender 5.2.5 LTS",
+    "executable_sha256": "aad8ce949a2e411cbf84eb993a68e2191b39a28a0f63c6dc9e1ca4f4a3a9fbd7",
+    "archive_url": "https://download.blender.org/release/Blender5.2/blender-5.2.5-linux-x64.tar.xz",
+    "archive_sha256": "6a93f1316ea794dec3027129fbc05f48b368184be25a8f993dd0301a6020a204"
+  },
+  "godot": {
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "executable_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+    "archive_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip",
+    "archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4"
+  }
+}

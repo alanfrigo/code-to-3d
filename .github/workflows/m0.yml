@@ -1,0 +1,39 @@
+name: M0 round-trip
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  roundtrip:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Rust contract
+        run: |
+          cargo fmt --check
+          cargo test --locked
+      - name: Fetch pinned Blender and Godot
+        run: |
+          mkdir -p out
+          bash scripts/fetch-toolchain.sh out/toolchain
+      - name: Export and verify Godot import
+        run: |
+          cargo run --locked -- roundtrip \
+            --blender out/toolchain/blender-5.2.5-linux-x64/blender \
+            --godot out/toolchain/Godot_v4.7.2-stable_linux.x86_64 \
+            --out out/m0
+      - name: Show round-trip evidence
+        if: always()
+        run: |
+          for file in out/m0/*.log out/m0/report.json; do
+            if test -f "$file"; then
+              printf '\n== %s ==\n' "$file"
+              cat "$file"
+            fi
+          done
